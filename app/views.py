@@ -8,7 +8,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from django.http import HttpResponse
-from app1.forms import LoginUsuario, SuscripcionEmail
+from app.forms import LoginUsuario, SuscripcionEmail
 from django.contrib.auth import login, authenticate , logout
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
@@ -16,7 +16,7 @@ import string
 import random
 from django.core.mail import send_mail
 import uuid
-from app1.models import *
+from app.models import *
 
 from django.db.models import Sum
 
