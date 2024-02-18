@@ -16,8 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import  *
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
-    path('saludo/', vista1)
+    
+    path('',HomeRegister.as_view(), name='home'),
+
+    path('login_view/', Login_View.as_view(),name='login_view'),
+    path('perfil/', login_required(perfil),name='perfil'),
+    path('logout_view/', logout_view,name='logout_view'),
+    path('lista/', listar_pedidos,name='lista'),
+    path('pedido/<int:id>', visualizar_pedidos, name='lista')
+
+
+    
 ]
